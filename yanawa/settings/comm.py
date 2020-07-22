@@ -36,7 +36,7 @@ def get_secret(setting, secret=secret):
         raise ImproperlyConfigured(error_msg)
 
 
-SECRET_KEY = "9di6l+%9!d8mug7z+l78o#gs(923u!!&60s@h@ubk9+x&ijm=b"
+SECRET_KEY = get_secret("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -136,3 +136,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
+AUTH_USER_MODEL = "accounts.User"
