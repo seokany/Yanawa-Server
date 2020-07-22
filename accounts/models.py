@@ -8,6 +8,8 @@ class User(AbstractBaseUser, PermissionsMixin):
     username_validator = UnicodeUsernameValidator
     username_length = MinLengthValidator(5, "유저명을 5글자 이상 입력해주세요")
 
+    objects = UserManager()
+
     email = models.EmailField(max_length=255, unique=True)
     username = models.CharField(
         "username",
