@@ -16,7 +16,7 @@ class UserSerializer(serializers.ModelSerializer):
 
 
 class SignupSerializer(serializers.ModelSerializer):
-    password = serializers.SerializerMethodField(write_only=True)
+    password = serializers.CharField(write_only=True)
 
     def save(self, **kwargs):
         user = User.objects.create(
